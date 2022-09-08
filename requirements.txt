@@ -1,0 +1,16 @@
+joblib
+lief
+matplotlib
+numpy
+pandas
+pefile
+Pillow
+python_magic
+PyYAML
+requests
+scikit_learn
+signify
+ssdeep
+streamlit
+xgboost
+yara-python

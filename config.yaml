@@ -1,0 +1,13 @@
+DYNAMIC:
+  CUCKOO_API_URL: http://CUCKOO-API-HOST:8080
+  CUCKOO_SUBMIT_ENDPOINT: "/tasks/create/file"
+  CUCKOO_TOKEN: CUCKOO_TOKEN
+  CUCKOO_SCREENSHOTS_ENDPOINT: /tasks/screenshots/
+
+STATIC:
+  YARA_RULES_PATH: auxiliary/Yara rules
+  
+WEBAPP:
+  MAGIC_PATH: auxiliary/Magic/magic.mgc
+  SQLITE_DATABASE: database.db
+  EXCLUSIONS: ['ELF', 'Mach-O']
