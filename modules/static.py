@@ -108,14 +108,13 @@ class PEFile:
         def isSigned(filename):
             with open(filename, "rb") as f:
                 signed_pe = SignedPEFile(f)
-                try:
-                    signed_pe.verify(countersignature_mode='ignore')
+                status, err = signed_pe.explain_verify()
+                if status.value == 1:
                     return 1
-                except Exception as e:
-                    if e.args[0] == "The PE file does not contain a certificate table.":
-                        return 0
-                    else:
-                        return -1
+                elif status.value == 2:
+                    return 0
+                else:
+                    return -1
 
         def isPacked(filename):
             matches = packer_compiler_rules.match(filename)
@@ -273,6 +272,7 @@ def process(file):
         return None
 
     sample_df = pd.DataFrame([sample])
+
     sample_df.insert(loc=0, column="family", value="-1")
 
     X_sample = sample_df[features].values
