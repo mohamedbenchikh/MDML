@@ -1,11 +1,5 @@
 # Malware Detection using machine learning (MDML)
 
-## Deployed application
-
-https://mdml.herokuapp.com/
-
-Deployed on a free Heroku instance, thus, the performance is not amazing but should serve its purpose as a PoC.
-
 ## Running it locally
 
 streamlit run app.py
@@ -14,7 +8,7 @@ streamlit run app.py
 
 Mohamed Benchikh
 ## Analysis modules: 
-- **Static**: Features are extracted from PE file headers (mainly Optional Header)
+- **Static**: Features are extracted from PE file headers (mainly Optional Header), Yara rules and digital signature.
 ![Static Analysis](https://user-images.githubusercontent.com/58364955/188492453-8ee68af8-1cf5-4192-a03f-56d472c243c2.png)
 
 - **Dynamic**: Features are the API calls traced using Cuckoo Sandbox
